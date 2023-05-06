@@ -1,20 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+
+/**REDUX */
+import store from './libs/redux/store'
+import { Provider } from 'react-redux'
+import { Screens } from './screens';
+import { Login } from './components/login/Login';
+
 
 export default function App() {
+  const [isLogin, setLogin] = React.useState(true)
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider store={store}>
+      {isLogin ? <Screens /> : <Login />}
+    </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
