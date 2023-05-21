@@ -5,13 +5,10 @@ import { DetailsScreen } from "../components/Detail.components";
 const SettingsStack = createNativeStackNavigator();
 
 export const SettingsStackScreen = () => {
-    return (
-        <SettingsStack.Navigator
-            screenOptions={{
-            }}
-        >
-            <SettingsStack.Screen name="Settings" component={SettingsScreen} />
-            <SettingsStack.Screen name="Details" component={DetailsScreen} />
-        </SettingsStack.Navigator>
-    );
-}
+  return (
+    <SettingsStack.Navigator screenOptions={{}}>
+      <SettingsStack.Screen name="Settings" component={SettingsScreen} />
+      <SettingsStack.Screen name="Details" component={DetailsScreen} />
+    </SettingsStack.Navigator>
+  );
+};
