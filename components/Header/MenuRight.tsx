@@ -30,14 +30,22 @@ export default function MenuRight(props: any) {
       }}
     >
       <TouchableNativeFeedback
-        background={TouchableNativeFeedback.Ripple("#3A83F5", false, 20)}
+        background={TouchableNativeFeedback.Ripple(
+          "rgb(186 230 253)",
+          false,
+          20
+        )}
       >
         <View style={{ padding: 10 }}>
           <Feather name="inbox" size={24} color="black" />
         </View>
       </TouchableNativeFeedback>
       <TouchableNativeFeedback
-        background={TouchableNativeFeedback.Ripple("#3A83F5", false, 20)}
+        background={TouchableNativeFeedback.Ripple(
+          "rgb(186 230 253)",
+          false,
+          20
+        )}
       >
         <View style={{ padding: 10 }}>
           <Feather name="message-square" size={24} color="black" />
@@ -45,7 +53,7 @@ export default function MenuRight(props: any) {
       </TouchableNativeFeedback>
       {isSale && (
         <TouchableNativeFeedback
-          background={TouchableNativeFeedback.Ripple("#3A83F5", false)}
+          background={TouchableNativeFeedback.Ripple("rgb(186 230 253)", false)}
           onPress={() => {
             dispatch(ChangeCardProduct());
           }}
@@ -55,7 +63,7 @@ export default function MenuRight(props: any) {
               padding: 10,
               flexDirection: "row",
               gap: 4,
-              backgroundColor: "#E2E3E4",
+              backgroundColor: "rgb(241 245 249)",
               borderRadius: 20,
               alignItems: "center",
             }}

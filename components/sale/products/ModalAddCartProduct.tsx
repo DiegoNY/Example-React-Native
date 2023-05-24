@@ -21,6 +21,9 @@ export const ModalAddCartProduct = () => {
   const sale = useSelector((state: RootState) => state.sale);
   const dispatch = useDispatch();
 
+  const [precio, setPrecio] = useState(0);
+  const [cantidad, setCantidad] = useState(0);
+
   return (
     <Modal
       animationType="slide"
@@ -36,9 +39,20 @@ export const ModalAddCartProduct = () => {
             >
               <Feather name="arrow-left" size={24} color="black" />
             </TouchableOpacity>
+            <Text style={{ paddingHorizontal: 26, fontSize: 13.5 }}>
+              Precio total del producto S/{cantidad * precio}
+            </Text>
           </View>
-          <InputModalProduct name="Cantidad" value="s" />
-          <InputModalProduct name="Precio del producto" value="s" />
+          <InputModalProduct
+            name="Cantidad"
+            value="s"
+            setValues={setCantidad}
+          />
+          <InputModalProduct
+            name="Precio del producto"
+            value="s"
+            setValues={setPrecio}
+          />
 
           <View
             style={{
@@ -49,13 +63,12 @@ export const ModalAddCartProduct = () => {
               paddingVertical: 10,
             }}
           >
-            <Text>Total 314</Text>
             <TouchableOpacity
               style={{
-                width: 140,
-                backgroundColor: "#7DD3FC",
+                width: "100%",
+                backgroundColor: "rgb(224 242 254)",
                 padding: 14,
-                borderRadius: 4,
+                borderRadius: 8,
                 alignItems: "center",
               }}
               onPress={() => {
@@ -63,7 +76,9 @@ export const ModalAddCartProduct = () => {
                 dispatch(ChangeAddModalProduct());
               }}
             >
-              <Text style={{ color: "white" }}>Agregar producto</Text>
+              <Text style={{ color: "rgb(37 99 235)", fontWeight: "600" }}>
+                Agregar producto al carrito
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -75,38 +90,34 @@ export const ModalAddCartProduct = () => {
 const style = StyleSheet.create({
   modal: {
     height: "100%",
-    backgroundColor: "#31313131",
     opacity: 60,
+    paddingHorizontal: 5,
   },
   modalView: {
-    borderTopLeftRadius: 14,
-    borderTopRightRadius: 14,
+    marginLeft: 10,
+    borderWidth: 0.4,
+    borderColor: "rgb(203 213 225)",
+    borderRadius: 20,
     position: "absolute",
     backgroundColor: "white",
     padding: 5,
     alignItems: "center",
     height: "36%",
-    width: "100%",
-    bottom: 0,
-    gap: 7,
+    width: "96%",
+    bottom: 11,
+    gap: 11,
+    display: "flex",
   },
   titleModal: {
     width: "100%",
     flexDirection: "row",
+    justifyContent: "space-between",
     alignItems: "center",
-  },
-  inputContent: {
-    borderWidth: 0.3,
-    borderColor: "#71717171",
   },
   input: {
     width: 300,
     padding: 3,
     paddingLeft: 17,
     borderRadius: 4,
-  },
-  textInput: {
-    color: "#717171",
-    left: 10,
   },
 });

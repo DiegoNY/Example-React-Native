@@ -20,12 +20,12 @@ export class ProductService {
   }
 
   async UpdateProduc(id: number, datap: Product) {
-    const { data } = await axios.post(`${host_server}`, datap, {
-      headers: {
-        Referer: "http://apis.net.pe/api-ruc",
-        Authorization: `Bearer ${this.token}`,
-      },
-    });
-    return data;
+    // const { data } = await axios.post(`${host_server}`, datap, {
+    //   headers: {
+    //     Referer: "http://apis.net.pe/api-ruc",
+    //     Authorization: `Bearer ${this.token}`,
+    //   },
+    // });
+    return [];
   }
 }

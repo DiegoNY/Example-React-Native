@@ -10,6 +10,7 @@ export const sale = createSlice({
     products_card: card_product,
     view_card_product: false,
     view_modal_add_product: false,
+    view_sell: false,
   },
   reducers: {
     AddCardProduct: (state, action) => {
@@ -21,10 +22,17 @@ export const sale = createSlice({
     ChangeAddModalProduct: (state) => {
       state.view_modal_add_product = !state.view_modal_add_product;
     },
+    ChangeSale: (state) => {
+      state.view_sell = !state.view_sell;
+    },
   },
 });
 
-export const { AddCardProduct, ChangeCardProduct, ChangeAddModalProduct } =
-  sale.actions;
+export const {
+  AddCardProduct,
+  ChangeCardProduct,
+  ChangeAddModalProduct,
+  ChangeSale,
+} = sale.actions;
 
 export default sale.reducer;

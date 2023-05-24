@@ -22,7 +22,6 @@ export const SaleStackScreen = () => {
       }}
     >
       <SaleStack.Screen name="principal" component={PrincipalScreen} />
-      <SaleStack.Screen name="second" component={SecondScreen} />
     </SaleStack.Navigator>
   );
 };

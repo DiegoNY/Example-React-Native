@@ -11,8 +11,12 @@ import { Product } from "./products/Products.component";
 import { Feather } from "@expo/vector-icons";
 import { ModalCartProduct } from "./products/ModalCartProducts";
 import { ModalAddCartProduct } from "./products/ModalAddCartProduct";
+import Sell from "./Sell";
+import { ChangeSale } from "../../libs/redux/feature/SaleSlice.feature";
+import { useDispatch } from "react-redux";
 
 export const PrincipalScreen = ({ navigation }: { navigation: any }) => {
+  const dispatch = useDispatch();
   return (
     <View
       style={{ backgroundColor: "#ffffff", height: "100%", flex: 1, gap: 3 }}
@@ -24,9 +28,7 @@ export const PrincipalScreen = ({ navigation }: { navigation: any }) => {
           paddingHorizontal: 20,
         }}
       >
-        <Text style={{ fontSize: 20, fontWeight: "600" }}>
-          Seleccion de productos
-        </Text>
+        <Text style={{ fontSize: 20, fontWeight: "600" }}>Productos</Text>
       </View>
       <View
         style={{
@@ -42,7 +44,8 @@ export const PrincipalScreen = ({ navigation }: { navigation: any }) => {
             flexDirection: "row",
             gap: 8,
             padding: 4,
-            backgroundColor: "#3131",
+            paddingVertical: 8,
+            backgroundColor: "rgb(241 245 249)",
             width: "100%",
             borderRadius: 10,
           }}
@@ -80,12 +83,14 @@ export const PrincipalScreen = ({ navigation }: { navigation: any }) => {
           bottom: 10,
           right: 20,
         }}
-        onPress={() => navigation.navigate("second")}
+        onPress={() => {
+          dispatch(ChangeSale());
+        }}
       >
         <View
           style={{
-            backgroundColor: "#31313131",
-            width: 110,
+            backgroundColor: "rgb(224 242 254)",
+            width: 140,
             padding: 10,
             borderRadius: 10,
             flexDirection: "row",
@@ -93,12 +98,21 @@ export const PrincipalScreen = ({ navigation }: { navigation: any }) => {
             alignItems: "center",
           }}
         >
-          <Text style={{ fontSize: 16 }}>Siguiente</Text>
-          <Feather name="chevron-right" size={20} color="black" />
+          <Text
+            style={{
+              fontSize: 14,
+              fontWeight: "500",
+              color: "rgb(37 99 235)",
+            }}
+          >
+            Siguiente paso
+          </Text>
+          <Feather name="chevron-right" size={20} color="rgb(37 99 235)" />
         </View>
       </TouchableOpacity>
       <ModalCartProduct />
       <ModalAddCartProduct />
+      <Sell />
     </View>
   );
 };
