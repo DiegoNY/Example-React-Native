@@ -66,7 +66,7 @@ export const ModalAddCartProduct = () => {
             <TouchableOpacity
               style={{
                 width: "100%",
-                backgroundColor: "rgb(224 242 254)",
+                backgroundColor: "rgb(39 39 42)",
                 padding: 14,
                 borderRadius: 8,
                 alignItems: "center",
@@ -76,7 +76,7 @@ export const ModalAddCartProduct = () => {
                 dispatch(ChangeAddModalProduct());
               }}
             >
-              <Text style={{ color: "rgb(37 99 235)", fontWeight: "600" }}>
+              <Text style={{ color: "rgb(245 245 245)", fontWeight: "600" }}>
                 Agregar producto al carrito
               </Text>
             </TouchableOpacity>

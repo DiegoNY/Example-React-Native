@@ -11,7 +11,7 @@ import { Product } from "./products/Products.component";
 import { Feather } from "@expo/vector-icons";
 import { ModalCartProduct } from "./products/ModalCartProducts";
 import { ModalAddCartProduct } from "./products/ModalAddCartProduct";
-import Sell from "./Sell";
+import Sell from "./sell/Sell";
 import { ChangeSale } from "../../libs/redux/feature/SaleSlice.feature";
 import { useDispatch } from "react-redux";
 
@@ -89,25 +89,26 @@ export const PrincipalScreen = ({ navigation }: { navigation: any }) => {
       >
         <View
           style={{
-            backgroundColor: "rgb(224 242 254)",
+            backgroundColor: "rgb(39 39 42)",
             width: 140,
             padding: 10,
             borderRadius: 10,
             flexDirection: "row",
             gap: 2,
             alignItems: "center",
+            justifyContent: "center",
           }}
         >
           <Text
             style={{
               fontSize: 14,
               fontWeight: "500",
-              color: "rgb(37 99 235)",
+              color: "rgb(245 245 245)",
             }}
           >
             Siguiente paso
           </Text>
-          <Feather name="chevron-right" size={20} color="rgb(37 99 235)" />
+          <Feather name="chevron-right" size={20} color="rgb(245 245 245)" />
         </View>
       </TouchableOpacity>
       <ModalCartProduct />
